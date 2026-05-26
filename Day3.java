@@ -7,7 +7,7 @@ class Book {
     private String author;
     private boolean isIssued;
 
-    public Book(int id, String title, String author) {
+     Book(int id, String title, String author) {
         this.id = id;
         this.title = title;
         this.author = author;
@@ -19,7 +19,7 @@ class Book {
     public String getAuthor() { return author; }
     public boolean isIssued() { return isIssued; }
 
-    public void setIssued(boolean issued) {
+     void setIssued(boolean issued) {
         isIssued = issued;
     }
 
@@ -36,7 +36,7 @@ class User {
     private ArrayList<Book> borrowedBooks = new ArrayList<>();
 
     // Constructor
-    public User(int id, String name) {
+     User(int id, String name) {
         this.id = id;
         this.name = name;
     }
@@ -66,17 +66,17 @@ class Library {
     private ArrayList<Book> books = new ArrayList<>();
     private ArrayList<User> users = new ArrayList<>();
 
-    public void addBook(Book book) {
+     void addBook(Book book) {
         books.add(book);
         System.out.println("✅ Book added: " + book.getTitle());
     }
 
-    public void addUser(User user) {
+     void addUser(User user) {
         users.add(user);
         System.out.println("✅ User added: " + user.getName());
     }
 
-    public void viewBooks() {
+     void viewBooks() {
         if (books.isEmpty()) {
             System.out.println("⚠ No books in library.");
         } else {
@@ -87,7 +87,7 @@ class Library {
         }
     }
 
-    public void viewUsers() {
+    void viewUsers() {
         if (users.isEmpty()) {
             System.out.println("⚠ No users registered.");
         } else {
@@ -98,7 +98,7 @@ class Library {
         }
     }
 
-    public void issueBook(int bookId, int userId) {
+    void issueBook(int bookId, int userId) {
         Book book = findBookById(bookId);
         User user = findUserById(userId);
 
@@ -120,7 +120,7 @@ class Library {
         System.out.println("✅ Book issued to " + user.getName());
     }
 
-    public void returnBook(int bookId, int userId) {
+    void returnBook(int bookId, int userId) {
         Book book = findBookById(bookId);
         User user = findUserById(userId);
 
